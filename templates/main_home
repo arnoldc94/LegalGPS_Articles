@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="main_home">
+        <h1>Welcome to the NewsPaper</h1>
+    </br>
+        <h3><a href="{% url 'login' %}">Login &nbsp </a> or <a href="{% url 'signup' %}"> &nbsp Signup</a></h3>
+    </br>
+        <h4>Forget your password? <a href="{% url 'password_reset' %}">(Reset)</a></h4>
+    </div>
+{% endblock content %}
