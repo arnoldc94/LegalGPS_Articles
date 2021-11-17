@@ -31,11 +31,11 @@ crossorigin="anonymous">
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'home' %}">LegalGPS</a>
+                    <a class="nav-link active" href="{% url 'home' %}">Home</a>
                 </li>
                 {% if user.is_staff or user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'article_new' %}}">Create Post</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'article_new' %}">Create Post</a>
                     </li>
                 {% endif %}
                 <li class="nav-item">
