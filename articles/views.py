@@ -3,6 +3,7 @@ from django.views.generic.edit import (
     CreateView, 
     UpdateView, 
     DeleteView,
+    
 )
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -11,7 +12,7 @@ from .models import Article
 
 class ArticleListView(ListView):
     model = Article
-    template_name = "home.html"
+    template_name = "article_list.html"
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
@@ -42,3 +43,5 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user or self.request.user.is_staff or self.request.user.is_superuser and self.request.user.is_active
+
+

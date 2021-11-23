@@ -13,10 +13,10 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
     list_display = ['email', 'username', 'age', 'is_staff', 'is_active']
     add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {'fields': ('age', 'role' )}),
+        (None, {'fields': ('age', 'role', 'profile_pic' )}),
     )
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('age', 'role' )}),
+        (None, {'fields': ('age', 'role', 'profile_pic' )}),
     )
 
 # Registrations:

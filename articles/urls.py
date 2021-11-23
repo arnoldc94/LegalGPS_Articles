@@ -10,7 +10,7 @@ from .views import (
 urlpatterns = [
     path('articles', 
     ArticleListView.as_view(), 
-    name="home"),
+    name="article_list"),
 
     path('<int:pk>/', 
     ArticleDetailView.as_view(), name='article_detail'),
@@ -23,5 +23,8 @@ urlpatterns = [
 
     path('<int:pk>/delete/',
     ArticleDeleteView.as_view(), name='article_delete'),
+
+    path('list/',
+    ArticleListView.as_view(), name='article_list'),
 
 ]

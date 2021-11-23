@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-9@^gee5rbktu=+zr1&+dsx^6k2f-(4h#xie-=%q$y6ptn$9@=%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1",]
 
 
 # Application definition
@@ -40,10 +42,12 @@ INSTALLED_APPS = [
 
     # 3rd party
     'crispy_forms',
+    'simple_chatbot',
 
     #local
     'accounts',
     'articles',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -134,6 +143,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'main_home'
+LOGOUT_REDIRECT_URL = 'home'
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+SIMPLE_CHATBOT = {
+    'responses': (
+        ("accounts.responses.GreetingResponse", "Greeting"),
+        ("accounts.responses.GoodbyeResponse", "Goodbye"),
+    ),
+}

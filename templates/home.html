@@ -1,30 +1,149 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Home{% endblock title %}
+{% block title %} Home {% endblock title %}
 
 {% block content %}
-<h1 class="list-header">LegalGPS homepage</h1>
-<div class="all-blogs">
-    {% for article in object_list %}
-            <div class="card" style="width: 20rem;">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h4> {{ article.title }}</h4>
-                        <h5><span>Author: </span> {{ article.author }}</h5>
-
+<div class="container-fluid c-jumbo">
+    <div class="container-fluid d-flex">
+        <div class="container-fluid d-flex">
+            <div class="jumbotron">
+                <h4 class="display-4">PATH</h4>
+                <h1 class="display-7">Your New Library Adventure</h1>
+                <div class="container-sm d-flex c-hero-group">
+                    <div class="hero-avatar">
+                        <img src= "{{ request.user.profile_pic.url }}"
+                            width=50 height=50>
                     </div>
-                    <div>
-                        <p>{{ post.body|truncatechars:38 }}</p>
+                    <p class="lead display-3">{{ user.first_name }} {{ user.last_name }}</p>
+                </div>
+                <div class="container-sm d-flex c-hero-group">
+                    <div class="container-fluid d-flex justify-content-center c-hero-item">
+                        <a class="btn btn-primary btn-lg btn-c-1" href="#" role="button">Learn more</a>
                     </div>
-                    <div class="links">
-                        <a href="#" class="btn">Read</a>
-                        {% if request.user == article.author or user.is_staff or user.is_superuser %}
-                        <a href="#" class="btn">Delete</a>
-                        <a href="#" class="btn">Edit</a>
-                        {% endif %}
+                    <div class="container-fluid d-flex justify-content-center c-hero-item">
+                        <a class="btn btn-tertiary btn-lg btn-c-2" href="#" role="button">Start Path</a>
                     </div>
                 </div>
             </div>
-    {% endfor %}
+        </div>
+        <div class="container-fluid d-flex hero-image-flex">
+            <div class="hero-image">
+                <img src="https://fs.hubspotusercontent00.net/hubfs/3938153/Digital%20Wayfarer/images/MelissaCarle.jpg">
+            </div>
+            <div class="hero-image">
+                <img src="https://fs.hubspotusercontent00.net/hubfs/3938153/Digital%20Wayfarer/images/Joel%20Jones.jpg">
+            </div>
+            <div class="hero-image">
+                <img
+                    src="https://fs.hubspotusercontent00.net/hubfs/3938153/Digital%20Wayfarer/images/DebbieSiragusa.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid content-sections">
+    <div class="section-header">
+        <div class="container-md d-flex">
+            <div class="container-fluid d-flex justify-content-start grow-8">
+                <h2 class="header">
+                    Pick a Path
+                </h2>
+            </div>
+            <div class="container-fluid d-flex justify-content-end">
+                <div class="d-flex nav-arrows">
+                    <div class="arrow-back">
+                        <i  class="fas fa-angle-left"></i>
+                    </div>
+                    <div class="space">
+                    </div>
+                    <div class="arrow-forward">
+                        <i  class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-content">
+        <div class="container-md d-flex justify-content-space-evenly">
+            <div class="d-flex content-box">
+                <div class="c-image"></div>
+                <div class="content-text">
+                    <div class="c-type">
+                        <h4>
+                            PATH
+                        </h4>
+                    </div>
+                    <div class="c-title">
+                        <h3>
+                            Starting Your Career
+                        </h3>
+                    </div>
+                    <div class="c-desc">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto
+                        </p>
+                    </div>
+                    <div class="c-actions d-flex">
+                        <div class="start-button btn btn-primary btn-sm">Learn More</div>
+                        <div class="learn-more-button">Start Path</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex content-box">
+                <div class="c-image"></div>
+                <div class="content-text">
+                    <div class="c-type">
+                        <h4>
+                            PATH
+                        </h4>
+                    </div>
+                    <div class="c-title">
+                        <h3>
+                            Vital Documents & IDs
+                        </h3>
+                    </div>
+                    <div class="c-desc">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto
+                        </p>
+                    </div>
+                    <div class="c-actions d-flex">
+                        <div class="start-button btn btn-primary btn-sm">Learn More</div>
+                        <div class="learn-more-button">Start Path</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex content-box">
+                <div class="c-image"></div>
+                <div class="content-text">
+                    <div class="c-type">
+                        <h4>
+                            PATH
+                        </h4>
+                    </div>
+                    <div class="c-title">
+                        <h3>
+                            Legal GPS
+                        </h3>
+                    </div>
+                    <div class="c-desc">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto
+                        </p>
+                    </div>
+                    <div class="c-actions d-flex">
+                        <div class="start-button btn btn-primary btn-sm">Learn More</div>
+                        <div class="learn-more-button">Start Path</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}
