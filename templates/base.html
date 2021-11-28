@@ -13,7 +13,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5ebc698119.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'app.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"
@@ -45,7 +44,7 @@
                     <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
                     <div class="container-sm d-flex justify-content-xl-center flex-grow-4 search-box">
                         <div class="input-group">
-                            <input class="form-control border-end-0 border rounded-pill" type="Search" value="Search"
+                            <input class="form-control border-end-0 border rounded-pill" type="Search" placeholder="Search"
                                 id="main-search-input">
                             <span class="input-group-append">
                                 <button
@@ -74,6 +73,10 @@
                                     {{ user.first_name }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href=#>Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     <li><a class="dropdown-item" href="{% url 'article_new' %}">Create Path</a></li>
                                     <li>
                                         <hr class="dropdown-divider">

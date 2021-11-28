@@ -147,6 +147,13 @@ body {
     color: #c5c5c5;
 }
 
+button  {
+    border:none;
+}
+
+.button:disabled {
+    opacity: .5;
+}
 .space {
     margin: 0px 10px;
 }
