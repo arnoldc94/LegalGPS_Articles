@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     # 3rd party
     'crispy_forms',
     'simple_chatbot',
+    'django_filters',
 
     #local
     'accounts',
     'articles',
-    'pages',
 ]
 
 MIDDLEWARE = [

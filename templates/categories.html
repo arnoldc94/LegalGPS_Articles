@@ -3,17 +3,19 @@
 {% block title %}Articles{% endblock title %}
 
 {% block content %}
+
 <div class="article-list">
     <div class="filter-container">
         <div class="filter-inner-container">
             <h4>Category Filter:</h4>
-                    
+                
                 <ul id="category" class="filter-list" name="category">
                     <li><a href="{% url 'article_list' %}"> All Articles</a></li>
-                    {% for category in object_list %}
+                    {% for category in articles %}
                     <li value="{{ category.category.name }}"><a href="{% url 'category' category.category.id %}">{{ category.category.name }}</a></li>
                     {% endfor %}
                 </ul>
+                
         </div>
     </div>
     <div class="list-wrapper">
@@ -23,7 +25,7 @@
         
         <div class="list-container">
             
-            {% for article in object_list %}
+            {% for article in category_articles %}
             
             <div class="card" >
                 <div class="inner_card">
@@ -41,5 +43,8 @@
         </div>
     </div>
 </div>
+
+
+
 
 {% endblock content %}

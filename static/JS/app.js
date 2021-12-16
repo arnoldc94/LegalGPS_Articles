@@ -111,3 +111,7 @@ function selectPrev() {
 // Event Listener
 nextBtn.addEventListener("click", selectNext);
 prevBtn.addEventListener("click", selectPrev);
+
+
+
+// Carousel 

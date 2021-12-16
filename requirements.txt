@@ -2,6 +2,7 @@ asgiref==3.4.1
 click==8.0.3
 Django==3.2.9
 django-crispy-forms==1.13.0
+django-filter==21.1
 django-simple-chatbot==0.0.9
 djangorestframework==3.12.4
 joblib==1.1.0
