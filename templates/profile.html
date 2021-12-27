@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="outer-container">
+    <div class="detail-container" style="width:70vw; height: 80vh;" >
+        <div class="card-container">
+            <div class="inner-detail" >
+                <div class="profile-header">
+                    <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+                </div>
+                <br>
+                <div class="profile-img">
+                    <img style="width:100px;height:100px;border-radius: 7px;" src= "{{ request.user.profile_pic.url }}" width=50 height=50>
+                </div>
+                <br><hr>
+                <div class="profile-buisness">
+                    <h6>{{ user.buisness }}</h6>
+                </div>
+                <br><hr>
+                <div class="profile-goal">
+                    <h6>{{ user.goal }}</h6>
+                </div>
+                <br><hr>
+                <div class="profile-bio">
+                    {{ user.bio }}
+                </div>
+                <div class="profile-description">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+{% endblock content%}

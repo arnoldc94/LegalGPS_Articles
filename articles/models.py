@@ -36,3 +36,4 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse("article_list", args=[self.id])
 
+

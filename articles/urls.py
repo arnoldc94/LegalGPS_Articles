@@ -33,6 +33,8 @@ urlpatterns = [
     path('list/',
     ArticleListView.as_view(), name='article_list'),
 
-    path('category/<str:cats>/', CategoryView, name = 'category')
+    path('category/<str:cats>/', CategoryView, name = 'category'),
+
+
 
 ]

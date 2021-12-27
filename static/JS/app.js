@@ -114,4 +114,6 @@ prevBtn.addEventListener("click", selectPrev);
 
 
 
-// Carousel 
+// Card Expansion
+
+
